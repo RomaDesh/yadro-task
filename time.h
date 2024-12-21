@@ -8,16 +8,16 @@
 
 class Time {
 private:
-    int h = 0; // Часы
-    int m = 0; // Минуты
+    int h = 0; // Р§Р°СЃС‹
+    int m = 0; // РњРёРЅСѓС‚С‹
 public:
-    // Конструктор для инициализации времени из строки формата "XX:XX"
+    // РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РґР»СЏ РёРЅРёС†РёР°Р»РёР·Р°С†РёРё РІСЂРµРјРµРЅРё РёР· СЃС‚СЂРѕРєРё С„РѕСЂРјР°С‚Р° "XX:XX"
     Time(const std::string& timeStr);
 
-    // Конструктор для инициализации времени из часов и минут
+    // РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РґР»СЏ РёРЅРёС†РёР°Р»РёР·Р°С†РёРё РІСЂРµРјРµРЅРё РёР· С‡Р°СЃРѕРІ Рё РјРёРЅСѓС‚
     Time(int hours, int minutes);
 
-    // Операторы сравнения
+    // РћРїРµСЂР°С‚РѕСЂС‹ СЃСЂР°РІРЅРµРЅРёСЏ
     bool operator==(const Time& other) const;
     bool operator!=(const Time& other) const;
     bool operator<(const Time& other) const;
@@ -25,15 +25,15 @@ public:
     bool operator<=(const Time& other) const;
     bool operator>=(const Time& other) const;
 
-    // Операторы сложения и вычитания
+    // РћРїРµСЂР°С‚РѕСЂС‹ СЃР»РѕР¶РµРЅРёСЏ Рё РІС‹С‡РёС‚Р°РЅРёСЏ
     Time operator+(const Time& other) const;
     Time operator+=(const Time& other);
     Time operator-(const Time& other) const;
 
-    // Подсчет выручки для столов
+    // РџРѕРґСЃС‡РµС‚ РІС‹СЂСѓС‡РєРё РґР»СЏ СЃС‚РѕР»РѕРІ
     friend int countPayment(const Time& time);
 
-    // Вывод времени в поток в формате "XX:XX"
+    // Р’С‹РІРѕРґ РІСЂРµРјРµРЅРё РІ РїРѕС‚РѕРє РІ С„РѕСЂРјР°С‚Рµ "XX:XX"
     friend std::ostream& operator<<(std::ostream& os, const Time& time);
 };
 

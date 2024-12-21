@@ -77,12 +77,12 @@ void clientWaiting(const Time& curTime, const std::string& clientName) {
     else if (!_clients[clientName])
         _ossRes << curTime << " 13 UndefinedErrorCode/ClientUnknown" << std::endl;
     else if (_clients[clientName] > 0)
-        // Клиент пытается встать в очередь, когда уже сидит за столом
+        // РљР»РёРµРЅС‚ РїС‹С‚Р°РµС‚СЃСЏ РІСЃС‚Р°С‚СЊ РІ РѕС‡РµСЂРµРґСЊ, РєРѕРіРґР° СѓР¶Рµ СЃРёРґРёС‚ Р·Р° СЃС‚РѕР»РѕРј
         _ossRes << curTime << " 13 UndefinedErrorCode/IHaveAPlaceAlready" << std::endl;
     else if (_occupiedDesks < _n)
         _ossRes << curTime << " 13 ICanWaitNoLonger" << std::endl;
     else if (_clients[clientName] == -2)
-        // Клиент пытается встать в очередь, когда уже находится в ожидании
+        // РљР»РёРµРЅС‚ РїС‹С‚Р°РµС‚СЃСЏ РІСЃС‚Р°С‚СЊ РІ РѕС‡РµСЂРµРґСЊ, РєРѕРіРґР° СѓР¶Рµ РЅР°С…РѕРґРёС‚СЃСЏ РІ РѕР¶РёРґР°РЅРёРё
         _ossRes << curTime << " 13 UndefinedErrorCode/IAmAlreadyInQueue" << std::endl;
     else if (_queue.size() < _n) {
         _queue.push(clientName);

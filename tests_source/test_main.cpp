@@ -15,7 +15,6 @@ std::queue<std::string> _queue;
 int _n, _price, _occupiedDesks = 0;
 bool _clubClosed = false;
 
-// Основная функция тестов
 int main(int argc, char** argv) {
     ::testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();

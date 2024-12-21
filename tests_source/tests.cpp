@@ -6,7 +6,7 @@
 
 #include <gtest/gtest.h>
 
-// Фикстура для тестирования Desk::clientLeft
+// Р¤РёРєСЃС‚СѓСЂР° РґР»СЏ С‚РµСЃС‚РёСЂРѕРІР°РЅРёСЏ Desk::clientLeft
 class DeskClientLeftTest : public ::testing::Test {
 protected:
 
@@ -36,7 +36,7 @@ protected:
 };
 
 
-// Тестирование custom_stoi
+// РўРµСЃС‚РёСЂРѕРІР°РЅРёРµ custom_stoi
 TEST(StoiTest, PositiveNumber) {
     EXPECT_EQ(custom_stoi("4"), 4);
 }
@@ -63,7 +63,7 @@ TEST(StoiTest, EmptyString) {
         }, std::invalid_argument);
 }
 
-// Тестирование goodName
+// РўРµСЃС‚РёСЂРѕРІР°РЅРёРµ goodName
 TEST(GoodNameTest, GoodAlphabet) {
     EXPECT_EQ(goodName("client123-_"), true);
     EXPECT_EQ(goodName("---___"), true);
@@ -82,7 +82,7 @@ TEST(GoodNameTest, EmptyString) {
     EXPECT_EQ(goodName(""), false);
 }
 
-// Тестирование конструктора Time для инициализации через строку
+// РўРµСЃС‚РёСЂРѕРІР°РЅРёРµ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂР° Time РґР»СЏ РёРЅРёС†РёР°Р»РёР·Р°С†РёРё С‡РµСЂРµР· СЃС‚СЂРѕРєСѓ
 TEST(TimeTest, GoodTime) {
     EXPECT_EQ(Time("23:59"), Time(23, 59));
     EXPECT_EQ(Time("00:00"), Time(0, 0));
@@ -106,7 +106,7 @@ TEST(TimeTest, BadTime) {
         }, std::runtime_error);
 }
 
-// Тестирование Desk::placeClient
+// РўРµСЃС‚РёСЂРѕРІР°РЅРёРµ Desk::placeClient
 TEST(DeskPlaceClientTest, DeskWithClient) {
     Desk testDesk(1, true, "test_client", Time(0, 0), Time(0, 0), 0);
     testDesk.placeClient(Time(12, 0), "test_client2");
@@ -132,7 +132,7 @@ TEST(DeskPlaceClientTest, DeskWithoutClient) {
     _ossRes.clear();
 }
 
-// Тестирование Desk::clientLeft
+// РўРµСЃС‚РёСЂРѕРІР°РЅРёРµ Desk::clientLeft
 TEST_F(DeskClientLeftTest, ClientLeftByHimselfEmptyQueue) {
     Desk testDesk(1, true, "test_client", Time(9, 0), Time(0, 0), 0);
     _clients["test_client"] = 1;
